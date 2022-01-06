@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { initMiddleware } from 'devise-axios';
 import AuthProvider from './providers/AuthProvider';
 import PlatformProvider from './providers/PlatformProvider';
+import GameProvider from './providers/GameProvider';
 
 initMiddleware();
 
@@ -16,7 +17,9 @@ ReactDOM.render(
     <BrowserRouter>
       <AuthProvider>
         <PlatformProvider>
-          <App />
+          <GameProvider>
+            <App />
+          </GameProvider>
         </PlatformProvider>
       </AuthProvider>
     </BrowserRouter>

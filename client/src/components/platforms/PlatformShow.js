@@ -5,6 +5,7 @@ import Moment from 'react-moment';
 import { Button } from 'react-bootstrap';
 import { PlatformConsumer } from '../../providers/PlatformProvider';
 import PlatformForm from './PlatformForm';
+import Games from '../games/Games';
 
 const PlatformShow = ({ updatePlatform, deletePlatform }) => {
   const params = useParams();
@@ -52,6 +53,7 @@ const PlatformShow = ({ updatePlatform, deletePlatform }) => {
           </Button>
         </>
       }
+      <Games platformId={id} />
     </>
   )
 }
