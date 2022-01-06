@@ -8,6 +8,8 @@ import Register from './components/auth/Register';
 import FetchUser from './components/auth/FetchUser';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import Profile from './components/auth/Profile';
+import Platforms from './components/platforms/Platforms';
+import PlatformShow from './components/platforms/PlatformShow';
 
 const App = () => (
   <>
@@ -19,6 +21,8 @@ const App = () => (
             <Route path='/' element={<Home />} />
             <Route path='/' element={<ProtectedRoute />}>
               <Route path='/profile' element={<Profile />} />
+              <Route path='/platforms' element={<Platforms />} />
+              <Route path='/platforms/:platformId' element={<PlatformShow />} />
             </Route>
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />

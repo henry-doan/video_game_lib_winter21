@@ -13,6 +13,11 @@ const MainNavbar = ({ user, handleLogout }) => {
               Profile
             </Link>
           </Nav.Link>
+          <Nav.Link>
+            <Link to="/platforms">
+              Platforms
+            </Link>
+          </Nav.Link>
           <Nav.Link onClick={() => handleLogout()}>
             Logout
           </Nav.Link>

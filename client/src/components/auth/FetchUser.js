@@ -13,6 +13,7 @@ const FetchUser = ({ authenticated, setUser, children }) => {
         axios.get('/api/auth/validate_token')
           .then(res => {
             setUser(res.data.data)
+            load()
           })
           .catch( res => load() )
       } else {
