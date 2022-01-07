@@ -44,7 +44,7 @@ const AuthProvider = ({ children }) => {
       handleLogin: handleLogin,
       handleLogout: handleLogout,
       authenticated: user !== null, 
-      setUser: (user) => setUser({ user })
+      setUser: (user) => setUser(user)
     }}>
       { children }
     </AuthContext.Provider>
