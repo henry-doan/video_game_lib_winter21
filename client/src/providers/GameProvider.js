@@ -37,12 +37,22 @@ const GameProvider = ({ children }) => {
       .catch( err => console.log(err))
   }
 
+  const deleteGame = (platformId, id) => {
+    axios.delete(`/api/platforms/${platformId}/games/${id}`)
+      .then( res => {
+        setGames(games.filter( g => g.id !== id))
+        navigate(`/platforms/${platformId}`)
+      })
+      .catch( err => console.log(err))
+  }
+
   return (
     <GameContext.Provider value={{
       games,
       getAllGames: getAllGames, 
       addGame: addGame, 
       updateGame: updateGame, 
+      deleteGame: deleteGame,
     }}>
       { children }
     </GameContext.Provider>

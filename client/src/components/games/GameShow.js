@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { Image, Modal, Button } from 'react-bootstrap';
 import GameForm from './GameForm';
 
-const GameShow = ({ updateGame }) => {
+const GameShow = ({ updateGame, deleteGame }) => {
   const params = useParams()
   const [game, setGame] = useState({ title: '', image: '', rating: '' })
   const [editing, setEdit] = useState(false)
@@ -25,6 +25,10 @@ const GameShow = ({ updateGame }) => {
       <Button variant="warning" onClick={() => setEdit(true)}>
         Edit
       </Button>
+      <Button variant="danger" onClick={() => deleteGame(params.platformId, params.gameId)}>
+        Delete
+      </Button>
+
 
       <Modal show={editing} onHide={() => setEdit(false)}>
         <Modal.Header closeButton>
