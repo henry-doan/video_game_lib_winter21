@@ -1,4 +1,5 @@
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const GameList = ({ games, platformId }) => {
 
@@ -15,7 +16,9 @@ const GameList = ({ games, platformId }) => {
                     <Card.Text>
                       Rating: {g.rating}
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <Link to={`/${platformId}/games/${g.id}`}>
+                      <Button variant="primary">Show</Button>
+                    </Link>
                   </Card.Body>
                 </Card>
               </Col>

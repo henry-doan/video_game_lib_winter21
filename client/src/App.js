@@ -10,6 +10,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import Profile from './components/auth/Profile';
 import Platforms from './components/platforms/Platforms';
 import PlatformShow from './components/platforms/PlatformShow';
+import GameShow from './components/games/GameShow';
 
 const App = () => (
   <>
@@ -23,6 +24,7 @@ const App = () => (
               <Route path='/profile' element={<Profile />} />
               <Route path='/platforms' element={<Platforms />} />
               <Route path='/platforms/:platformId' element={<PlatformShow />} />
+              <Route path='/:platformId/games/:gameId' element={<GameShow />} />
             </Route>
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
