@@ -1,6 +1,7 @@
 @varsionArr = ['Founder', 'Gold', 'Normal', 'GOTY', 'Collectors']
 @ratingArr = ['EC', 'E', 'E 10+', 'T', 'M', 'RP', 'AO']
 
+Note.delete_all
 Game.delete_all
 Platform.delete_all
 
@@ -13,12 +14,19 @@ Platform.delete_all
   )
 
   5.times do
-    Game.create(
+    game = Game.create(
       title: Faker::Game.title,
       rating: @ratingArr.sample,
       image: "https://images.unsplash.com/photo-1513807762437-8c8dee6b3776?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80",
       platform_id: platform.id
     )
+     3.times do
+        Note.create(
+          title: Faker::Food.dish,
+          body: Faker::Food.description,
+          game_id: game.id
+        )
+     end
   end
 end
 

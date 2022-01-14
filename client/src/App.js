@@ -11,6 +11,7 @@ import Profile from './components/auth/Profile';
 import Platforms from './components/platforms/Platforms';
 import PlatformShow from './components/platforms/PlatformShow';
 import GameShow from './components/games/GameShow';
+import NoteShow from './components/notes/NoteShow';
 
 const App = () => (
   <>
@@ -25,6 +26,7 @@ const App = () => (
               <Route path='/platforms' element={<Platforms />} />
               <Route path='/platforms/:platformId' element={<PlatformShow />} />
               <Route path='/:platformId/games/:gameId' element={<GameShow />} />
+              <Route path='/:gameId/notes/:noteId' element={<NoteShow />} />
             </Route>
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />

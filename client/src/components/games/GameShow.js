@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Image, Modal, Button } from 'react-bootstrap';
 import GameForm from './GameForm';
+import Notes from '../notes/Notes';
 
 const GameShow = ({ updateGame, deleteGame }) => {
   const params = useParams()
@@ -28,6 +29,7 @@ const GameShow = ({ updateGame, deleteGame }) => {
       <Button variant="danger" onClick={() => deleteGame(params.platformId, params.gameId)}>
         Delete
       </Button>
+      <Notes gameId={params.gameId} />
 
 
       <Modal show={editing} onHide={() => setEdit(false)}>

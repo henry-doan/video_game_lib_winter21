@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     resources :platforms do
       resources :games
     end
+
+    resources :games, except: [:index, :show, :create, :update, :destroy] do
+      resources :notes
+    end
   end
   
 end
